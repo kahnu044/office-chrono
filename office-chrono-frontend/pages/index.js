@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+// Title of the page
+// Home.title = 'Office Chrono - A new way of Singing';
+
 export default function Home() {
   return (
     <>
