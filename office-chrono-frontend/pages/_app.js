@@ -1,19 +1,20 @@
-import '@/styles/globals.css'
+import '@/styles/globals.css';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }) {
-
   const router = useRouter();
 
   useEffect(() => {
-    const isAuthenticated = !!localStorage.getItem('token'); // Check if the token is present in local storage
+    const token = localStorage.getItem('token'); // Retrieve the token from local storage
 
-    if (isAuthenticated) {
-      router.push('/dashboard');
-    } else {
+    if (Component.protected && !token) {
+      // If the component is protected and no token is present, redirect to the home page
       router.push('/');
+    } else if (Component.protected && token) {
+      // If the component is not protected and a token is present, redirect to the dashboard
+      router.push('/dashboard');
     }
   }, []);
 
