@@ -1,10 +1,12 @@
-import React from 'react'
+import Layout from '../../components/Layout';
 import ProtectedRoute from '../../components/ProtectedRoute';
 function users() {
     return (
-        <ProtectedRoute>
-            <div>users</div>
-        </ProtectedRoute>
+        <Layout>
+            <ProtectedRoute>
+                <div>users</div>
+            </ProtectedRoute>
+        </Layout>
     )
 }
 

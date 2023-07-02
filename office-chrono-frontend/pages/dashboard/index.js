@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Layout from '../../components/Layout';
 import ProtectedRoute from '../../components/ProtectedRoute';
 
 const Dashboard = () => {
@@ -14,8 +15,8 @@ const Dashboard = () => {
   };
 
   return (
-    <ProtectedRoute>
-      <>
+    <Layout>
+      <ProtectedRoute>
         <div>
           <section className='flex justify-between m-2 items-center'>
             <h4>Dashboard</h4>
@@ -24,8 +25,8 @@ const Dashboard = () => {
             </button>
           </section>
         </div>
-      </>
-    </ProtectedRoute>
+      </ProtectedRoute>
+    </Layout>
   );
 };
 
