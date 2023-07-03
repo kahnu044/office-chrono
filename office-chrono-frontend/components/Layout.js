@@ -5,7 +5,6 @@ import Sidebar from './Sidebar';
 
 import React, { useState } from 'react'
 
-
 const Layout = ({ children }) => {
 
     const [isProfileOpen, setIsProfileOpen] = useState(false);
