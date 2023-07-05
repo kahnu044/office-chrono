@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export" : "next export"
+    "export" : "next export",
+    "build-production": "next build && next export && mv -T out /var/www/html/checkin"
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
