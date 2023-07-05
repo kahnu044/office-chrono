@@ -49,7 +49,7 @@ function Header(props) {
                       onClick={toggleProfile}
                     >
                       <span className="sr-only">Open user menu</span>
-                      <img className="w-10 h-10 rounded-full" src="profile-picture.jpg" alt="User Profile Picture" />
+                      <img className="w-10 h-10 rounded-full" src="/profile-picture.jpg" alt="User Profile Picture" />
                     </button>
                   </div>
                   <div className={`${isProfileOpen ? 'block' : 'hidden'} z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600 absolute top-3/4 right-0`} id="dropdown-user" >
