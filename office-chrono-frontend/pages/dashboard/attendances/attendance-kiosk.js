@@ -1,10 +1,15 @@
 import Layout from '../../../components/Layout';
 import ProtectedRoute from '../../../components/ProtectedRoute';
+import TableListItems from '../../../components/tables/TableListItems';
+
+
 function attendance() {
     return (
         <Layout>
             <ProtectedRoute>
-                <p>attendance</p>
+                <>
+                    <TableListItems />
+                </>
             </ProtectedRoute>
         </Layout>
     )
