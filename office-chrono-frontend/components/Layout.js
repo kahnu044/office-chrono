@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Layout = ({ children }) => {
 
@@ -18,6 +18,26 @@ const Layout = ({ children }) => {
         setIsProfileOpen(!isProfileOpen);
     };
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 680) {
+                setIsSidebarOpen(false);
+            }
+            setIsSidebarOpen(true);
+        };
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Initial check on component mount
+        handleResize();
+
+        // Clean up event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+
+    }, []);
 
     return (
         <div>
